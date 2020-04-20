@@ -1,0 +1,105 @@
+using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
+
+namespace Mysterious 
+{
+    static class Program
+    {
+        
+        [STAThread]
+        static void Main()
+        {
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new Mysterious_You());
+        }
+    }  
+}
+    
+// This is the Numerology_Service.cs
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+public class number
+{
+    private int _n; // niet-vereenvoudigd nummer
+    private int _nSimple;
+    
+    public number(int n)
+    {
+        _n = n;
+        _nSimple = numService.simplify(n);
+    }
+    
+    public int simplifiedNumber
+    {
+        get
+        {
+            return _nSimple;
+        }
+    }
+    
+    public int n
+    {
+        get
+        {
+            return _n;
+        }
+    }
+    
+    public override string ToString()
+    {
+        return _n == _nSimple ? _n.ToString() : _n.ToString() + '/' + _nSimple.ToString();
+    }
+}
+
+abstract class numService
+{
+    private static List vowels = new List { 'a', 'e', 'i', 'o', 'u' };
+    
+    
+    This is the method as example in the numerology_service.cs
+    
+ 
+    public static number getAdressAnalyseNumber1(string firstnameCU)
+    {
+        //this method works for the calculation of the name of somebody, and I will implement the numbers of the adress to work
+    
+        // First, we reduce each unit (First, and Lastname) of the Daily Name to a single-digit or a (masternumber?).
+        //Next we add each of the resulting digits (or Master numbers) together and reduce the total again to a single-digit.
+        string[] input = { firstnameCU };
+        return simplifyUnits(input);
+    }
+
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Mysterious_You_1
+{
+    public partial class Mysterious_You : Form
+    {
+        public Mysterious_You()
+        {
+            InitializeComponent();
+
+            // This is the part of the Form, this works for the name.
+
+            // I want the outcome of the different calculations appear in the outcome
+            // boxes in the form in the same way as Life_Pat_outcome.Text
+
+            private void Get_custom_report_Click(object sender, EventArgs e)
+            {
+                Adress_outcome_1.Text = numService.getAdressAnalyseNumber1(Adress_1.Text).ToString();
+            }
